@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
+class Investigation(models.Model):
+    pass
+
+
+class Score(models.Model):
+    person = ''
+    investigation = models.ForeignKey(Investigation, default=None)

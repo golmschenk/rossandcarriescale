@@ -1,7 +1,7 @@
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
-from rossandcarriescale.models import Investigation, Score
+from scales.models import Investigation, Score
 
 
 class TestVisitor(StaticLiveServerTestCase):
