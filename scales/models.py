@@ -8,3 +8,8 @@ class Investigation(models.Model):
 class Score(models.Model):
     person = models.CharField(max_length=255, default='')
     investigation = models.ForeignKey(Investigation, default=None)
+    danger = models.DecimalField(max_digits=6, decimal_places=4, default=1)
+    cost = models.DecimalField(max_digits=6, decimal_places=4, default=1)
+    creepiness = models.DecimalField(max_digits=6, decimal_places=4, default=1)
+    pseudoscience = models.DecimalField(max_digits=6, decimal_places=4, default=1)
+
