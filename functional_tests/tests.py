@@ -5,6 +5,13 @@ from scales.models import Investigation, Score
 
 
 class TestVisitor(StaticLiveServerTestCase):
+
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
+
     def test_visitor_sees_scale_scores(self):
         # -- Setup a few scores to display.
         investigation1 = Investigation.objects.create(title='Pumpkin Cat Scrying')
@@ -19,8 +26,10 @@ class TestVisitor(StaticLiveServerTestCase):
                                       cost=5, danger=7)
 
         # Kara goes to the Ross and Carrie Scale app.
-        self.browser = webdriver.Firefox()
         self.browser.get(self.live_server_url)
+
+        # Kara sees the title of the page add guesses she has the right link.
+        self.assertEqual(self.browser.title, "Ross and Carrie Scale")
         self.fail('Finish the test!')
 
         # She sees a score for both Ross and Carrie for an investigation.
