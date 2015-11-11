@@ -30,9 +30,11 @@ class TestVisitor(StaticLiveServerTestCase):
 
         # Kara sees the title of the page add guesses she has the right link.
         self.assertEqual(self.browser.title, "Ross and Carrie Scale")
-        self.fail('Finish the test!')
 
         # She sees a score for both Ross and Carrie for an investigation.
+        headers = self.browser.find_elements_by_tag_name('h2')
+        self.assertIn(investigation1.title, [header.text for header in headers])
+        self.fail('Finish the test!')
 
         # Kara also sees a second investigation with a score from both Ross and Carrie.
 

@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from scales.models import Investigation
+
 
 def scales_page(request):
-    return render(request, 'scales.html')
+    investigations = Investigation.objects.all()
+    return render(request, 'scales.html', {'investigations': investigations})

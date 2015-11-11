@@ -5,6 +5,8 @@
     <title>Ross and Carrie Scale</title>
 </head>
 <body>
-
+    {% for investigation in investigations %}
+        <h2>{{ investigation.title }}</h2>
+    {% endfor %}
 </body>
 </html>
