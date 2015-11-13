@@ -6,5 +6,5 @@ before_install:
   -in rossandcarriescale/secret.py.enc -out rossandcarriescale/secret.py -d
 install: pip install -r requirements.txt
 before_script:
-  - psql -c "CREATE DATABASE rossandcarriescale;" -U postgres
+  - psql -c "CREATE DATABASE rossandcarriescale;" -U rossandcarriescale
 script: python manage.py test
