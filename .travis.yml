@@ -1,5 +1,8 @@
 language: python
 python:
-  - "3.5"
-install: "pip install -r requirements.txt"
-script: "python manage.py test"
+- '3.5'
+before_install:
+- openssl aes-256-cbc -K $encrypted_fba3d5f6b11d_key -iv $encrypted_fba3d5f6b11d_iv
+  -in secret.py.enc -out secret.py -d
+install: pip install -r requirements.txt
+script: python manage.py test
