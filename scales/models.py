@@ -17,3 +17,6 @@ class Score(models.Model):
     creepiness = models.DecimalField(max_digits=6, decimal_places=4, default=1)
     pseudoscience = models.DecimalField(max_digits=6, decimal_places=4, default=1)
 
+    @staticmethod
+    def rating_display(number):
+        return str("{0:.2f}".format(number))

@@ -56,6 +56,22 @@ class TestScoreModel(TestCase):
         saved_score = Score.objects.first()
         self.assertEqual(saved_score.pseudoscience, 2)
 
+    def test_rating_display_shows_an_integer_as_is(self):
+        display_two = Score.rating_display(2)
+        display_ten = Score.rating_display(10)
+        self.assertEqual(display_two, '2')
+        self.assertEqual(display_ten, '10')
+
+    def test_rating_display_rounds_float(self):
+        display_number = Score.rating_display(3.1415)
+        self.assertEqual(display_number, '3.14')
+
+    def test_rating_display_removes_unnecessary_zeros_and_decimals(self):
+        display_number = Score.rating_display(3.00000)
+        self.assertEqual(display_number, '3')
+        display_number = Score.rating_display(3.1000)
+        self.assertEqual(display_number, '3.1')
+
 
 class TestInvestigationModel(TestCase):
 
