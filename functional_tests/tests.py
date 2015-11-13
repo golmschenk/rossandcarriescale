@@ -45,7 +45,15 @@ class TestVisitor(StaticLiveServerTestCase):
         self.assertIn('4', investigation1_div.text)
 
         # Kara also sees a second investigation with a score from both Ross and Carrie.
-        self.fail('Finish the test!')
+        headers = self.browser.find_elements_by_tag_name('h2')
+        self.assertIn(investigation1.title, [header.text for header in headers])
+        investigation1_div = self.browser.find_element_by_id('battery_healing')
+        self.assertIn('Ross', investigation1_div.text)
+        self.assertIn('Carrie', investigation1_div.text)
+        self.assertIn('7', investigation1_div.text)
+        self.assertIn('6', investigation1_div.text)
+        self.assertIn('3', investigation1_div.text)
+        self.assertIn('7.5', investigation1_div.text)
+        self.assertIn('5', investigation1_div.text)
 
         # Interested, Kara leaves to go listen to one of the episodes.
-
