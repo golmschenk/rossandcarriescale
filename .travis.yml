@@ -2,9 +2,7 @@ language: python
 python:
 - '3.5'
 before_install:
-- openssl aes-256-cbc -K $encrypted_fba3d5f6b11d_key -iv $encrypted_fba3d5f6b11d_iv
-  -in rossandcarriescale/secret.py.enc -out rossandcarriescale/secret.py -d
+- openssl aes-256-cbc -K $encrypted_1be76513ce5b_key -iv $encrypted_1be76513ce5b_iv
+  -in rossandcarriescale/secret.py.enc -out rossandcarriescale/travis_secret.py -d
 install: pip install -r requirements.txt
-before_script:
-  - psql -c "CREATE DATABASE rossandcarriescale;" -U rossandcarriescale
 script: python manage.py test
