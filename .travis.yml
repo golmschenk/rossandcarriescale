@@ -3,6 +3,6 @@ python:
 - '3.5'
 before_install:
 - openssl aes-256-cbc -K $encrypted_1be76513ce5b_key -iv $encrypted_1be76513ce5b_iv
-  -in rossandcarriescale/secret.py.enc -out rossandcarriescale/travis_secret.py -d
+  -in rossandcarriescale/secret.py.enc -out rossandcarriescale/secret.py -d
 install: pip install -r requirements.txt
 script: python manage.py test
