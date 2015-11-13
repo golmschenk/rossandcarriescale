@@ -1,4 +1,7 @@
+from unittest.mock import Mock
+
 from django.test import TestCase
+
 from scales.models import Score, Investigation
 
 
@@ -71,6 +74,42 @@ class TestScoreModel(TestCase):
         self.assertEqual(display_number, '3')
         display_number = Score.rating_display(3.1000)
         self.assertEqual(display_number, '3.1')
+
+    def test_pseudoscience_display_uses_formatter(self):
+        score = Score(pseudoscience=2)
+        score.rating_display = Mock(return_value='2')
+
+        display_value = score.pseudoscience_display
+
+        score.rating_display.assert_called_with(2)
+        self.assertEqual(display_value, '2')
+
+    def test_cost_display_uses_formatter(self):
+        score = Score(cost=2)
+        score.rating_display = Mock(return_value='2')
+
+        display_value = score.cost_display
+
+        score.rating_display.assert_called_with(2)
+        self.assertEqual(display_value, '2')
+
+    def test_danger_display_uses_formatter(self):
+        score = Score(danger=2)
+        score.rating_display = Mock(return_value='2')
+
+        display_value = score.danger_display
+
+        score.rating_display.assert_called_with(2)
+        self.assertEqual(display_value, '2')
+
+    def test_creepiness_display_uses_formatter(self):
+        score = Score(creepiness=2)
+        score.rating_display = Mock(return_value='2')
+
+        display_value = score.creepiness_display
+
+        score.rating_display.assert_called_with(2)
+        self.assertEqual(display_value, '2')
 
 
 class TestInvestigationModel(TestCase):

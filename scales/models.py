@@ -19,4 +19,20 @@ class Score(models.Model):
 
     @staticmethod
     def rating_display(number):
-        return str("{0:.2f}".format(number))
+        return str("{0:.2f}".format(number).rstrip('0').rstrip('.'))
+
+    @property
+    def pseudoscience_display(self):
+        return self.rating_display(self.pseudoscience)
+
+    @property
+    def cost_display(self):
+        return self.rating_display(self.cost)
+
+    @property
+    def danger_display(self):
+        return self.rating_display(self.danger)
+
+    @property
+    def creepiness_display(self):
+        return self.rating_display(self.creepiness)
