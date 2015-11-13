@@ -34,8 +34,18 @@ class TestVisitor(StaticLiveServerTestCase):
         # She sees a score for both Ross and Carrie for an investigation.
         headers = self.browser.find_elements_by_tag_name('h2')
         self.assertIn(investigation1.title, [header.text for header in headers])
-        self.fail('Finish the test!')
+        investigation1_div = self.browser.find_element_by_id('pumpkin_cat_scrying')
+        self.assertIn('Ross', investigation1_div.text)
+        self.assertIn('Carrie', investigation1_div.text)
+        self.assertIn('8', investigation1_div.text)
+        self.assertIn('3', investigation1_div.text)
+        self.assertIn('1', investigation1_div.text)
+        self.assertIn('2', investigation1_div.text)
+        self.assertIn('7', investigation1_div.text)
+        self.assertIn('4', investigation1_div.text)
 
         # Kara also sees a second investigation with a score from both Ross and Carrie.
+        self.fail('Finish the test!')
 
         # Interested, Kara leaves to go listen to one of the episodes.
+

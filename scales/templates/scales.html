@@ -6,7 +6,16 @@
 </head>
 <body>
     {% for investigation in investigations %}
-        <h2>{{ investigation.title }}</h2>
+        <div id="{{ investigation.html_id }}">
+            <h2>{{ investigation.title }}</h2>
+            {% for score in investigation.score_set.all %}
+                {{ score.person }}
+                Pseudoscience: {{ score.pseudoscience }}
+                Cost: {{ score.cost }}
+                Danger: {{ score.danger }}
+                Creepiness: {{ score.creepiness }}
+            {% endfor %}
+        </div>
     {% endfor %}
 </body>
 </html>
