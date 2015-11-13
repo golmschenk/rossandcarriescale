@@ -67,3 +67,7 @@ class TestInvestigationModel(TestCase):
         Investigation.objects.create(title='Test Title')
         saved_investigation = Investigation.objects.first()
         self.assertEqual(saved_investigation.title, 'Test Title')
+
+    def test_html_id_conversion_of_title(self):
+        investigation = Investigation(title='Test Title')
+        self.assertEqual(investigation.html_id, 'test_title')

@@ -4,6 +4,10 @@ from django.db import models
 class Investigation(models.Model):
     title = models.CharField(max_length=255, default='')
 
+    @property
+    def html_id(self):
+        return self.title.replace(' ', '_').lower()
+
 
 class Score(models.Model):
     person = models.CharField(max_length=255, default='')
