@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ross and Carrie Scale</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     {% for investigation in investigations %}
         <div id="{{ investigation.html_id }}">
             <h2>{{ investigation.title }}</h2>
@@ -17,5 +13,4 @@
             {% endfor %}
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
