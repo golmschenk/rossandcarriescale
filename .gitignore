@@ -1,5 +1,7 @@
-/rossandcarriescale/travis_secret.py
-/rossandcarriescale/secret.py
+/source/rossandcarriescale/travis_secret.py
+/source/rossandcarriescale/secret.py
+/virtualenv/*
+!/virtualenv/.keep
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
