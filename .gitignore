@@ -1,7 +1,11 @@
+### Project specific
 /source/rossandcarriescale/travis_secret.py
 /source/rossandcarriescale/secret.py
 /virtualenv/*
 !/virtualenv/.keep
+/source/rossandcarriescale/static/bower/*
+!/source/rossandcarriescale/static/bower/.keep
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
