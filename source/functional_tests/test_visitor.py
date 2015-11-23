@@ -1,16 +1,8 @@
-from selenium import webdriver
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-
+from functional_tests.base import BaseFunctionalTest
 from scales.models import Investigation, Score
 
 
-class TestVisitor(StaticLiveServerTestCase):
-
-    def setUp(self):
-        self.browser = webdriver.Firefox()
-
-    def tearDown(self):
-        self.browser.quit()
+class TestVisitor(BaseFunctionalTest):
 
     def test_visitor_sees_scale_scores(self):
         # -- Setup a few scores to display.
