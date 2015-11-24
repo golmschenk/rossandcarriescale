@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for investigation in investigations %}
-        <div id="{{ investigation.html_id }}">
+        <div id="{{ investigation.html_id }}" class="col-md-12">
             <h2>{{ investigation.title }}</h2>
             {% for score in investigation.score_set.all %}
                 {{ score.person }}
