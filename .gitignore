@@ -3,8 +3,8 @@
 /source/rossandcarriescale/secret.py
 /virtualenv/*
 !/virtualenv/.keep
-/source/rossandcarriescale/static/bower/*
-!/source/rossandcarriescale/static/bower/.keep
+/source/rossandcarriescale/static/bower_components/*
+!/source/rossandcarriescale/static/bower_components/.keep
 
 ### Python template
 # Byte-compiled / optimized / DLL files

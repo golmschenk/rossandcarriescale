@@ -2,7 +2,7 @@ from functional_tests.base import BaseFunctionalTest
 from scales.models import Investigation, Score
 
 
-class TestVisitor(BaseFunctionalTest):
+class TestLayout(BaseFunctionalTest):
 
     def test_basic_style_is_loaded(self):
         # -- Setup a score to display.
