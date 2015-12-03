@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Score, Investigation
+
+admin.site.register(Investigation)
+admin.site.register(Score)
