@@ -1,3 +1,6 @@
+"""
+Tests for checking that layout works correctly.
+"""
 from functional_tests.base import BaseFunctionalTest
 from scales.models import Investigation, Score
 

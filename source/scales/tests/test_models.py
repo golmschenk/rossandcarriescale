@@ -1,3 +1,6 @@
+"""
+Scale model tests (not scale models as in model trains, but the models of the scales app).
+"""
 from unittest.mock import Mock
 
 from django.test import TestCase

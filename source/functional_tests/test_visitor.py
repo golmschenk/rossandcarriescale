@@ -1,3 +1,6 @@
+"""
+Functional tests for checking a basic visitor can interact with the site.
+"""
 from functional_tests.base import BaseFunctionalTest
 from scales.models import Investigation, Score
 
