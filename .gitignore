@@ -1,10 +1,10 @@
 ### Project specific
-/source/rossandcarriescale/travis_secret.py
-/source/rossandcarriescale/secret.py
+/rossandcarriescale/travis_secret.py
+/rossandcarriescale/secret.py
 /virtualenv/*
 !/virtualenv/.keep
-/source/rossandcarriescale/static/bower_components/*
-!/source/rossandcarriescale/static/bower_components/.keep
+/rossandcarriescale/static/bower_components/*
+!/rossandcarriescale/static/bower_components/.keep
 
 ### Python template
 # Byte-compiled / optimized / DLL files
